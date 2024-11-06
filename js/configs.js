@@ -46,7 +46,7 @@ const configs = (function () {
     const tasklistCornerRadius = 20;
 
     // Enable to use dummy data, set false to remove with dummy data and true to fill with dummy data
-    const testingMode = true;
+    const testingMode = false;
 
     // Task ordering preference (numbered tasks or checkboxes) - set true for the style you want and false for the other
     const preferredTaskOrdering = {
