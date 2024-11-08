@@ -1,7 +1,7 @@
 
 [!["Buy Me A Coffee"](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/kimothorick)
 
-# STATUS: IN DEVELOPMENT
+# STATUS: IN DEVELOPMENT - DO NOT USE UNTIL CHANGES ARE PUSHED TO THE MAIN BRANCH
 
 # Focusly - Twitch Task Bot
 
