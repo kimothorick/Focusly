@@ -13,46 +13,12 @@ const configs = (function () {
     const username = '';  // Insert your bot’s account username here
     const oauth = '';     // Insert your bot’s OAuth token here
 
-    // Main appearance settings for the bot overlay
-    const height = '660px';
-    const width = '410px';
-    const usernameFontSize = 14;
-    const usernameFontWeight = 600;
-    const checkBoxSize = 14;
-    const taskFontSize = 14;
-    const taskFontWeight = 500;
-    const fontFamily = 'Inter'; // Supports all google fonts - https://fonts.google.com/ - match spelling with Google Fonts
-    const completionProgressFontSize = 14;
-    const completionProgressFontWeight = 500;
-    const italicsOnCompletedTask = true;
-
-    // Header details for the bot overlay
-    const headerTitleFontSize = 16;
-    const headerTitleFontWeight = 600;
-    const showHeaderDescription = true;
-    const taskHeaderDescription = "Progress isn’t about speed but consistency. Stay committed, and remember, small wins add up!"
-    const headerDescriptionFontSize = 13;
-    const headerDescriptionFontWeight = 500;
-    const headerDetailsFontSize = 14;
-    const headerDetailsFontWeight = 500;
-    const headerDetailsIconSize = 20;
-
-    // UI settings for single/multi-view modes
-    // when using multi-view
-    const headerCornerRadius = 15;
-    const taskContainerCornerRadius = 15;
-
-    // When using single-view
-    const tasklistCornerRadius = 20;
-
-    // Enable to use dummy data, set false to remove with dummy data and true to fill with dummy data
+    // Enable to use dummy data, set false to remove dummy data and true to fill with dummy data
     const testingMode = false;
 
-    // Task ordering preference (numbered tasks or checkboxes) - set true for the style you want and false for the other
-    const preferredTaskOrdering = {
-        numbered: true, // true = ordered tasks, false = checkbox style
-        checkbox: false // true = checkbox style, false = ordered
-    };
+    // Main appearance settings for the bot overlay
+    const height = '660px'; // Height of the overlay
+    const width = '410px'; // Width of the overlay
 
     // Layout preference - set true for the view you want and false for the other
     const preferredLayout = {
@@ -60,8 +26,45 @@ const configs = (function () {
         multiView: true,   // true = multi-view, false = single-view
     };
 
-    // Set to true if you want to use the user's username twitch color on the tasklist
-    const useUsernameColor = true;
+    // UI settings for single/multi-view modes
+    // when using multi-view
+    const headerCornerRadius = 15;           // Corner radius for header in multi-view mode
+    const taskContainerCornerRadius = 15;    // Corner radius for the task container in multi-view mode
+
+    // When using single-view
+    const tasklistCornerRadius = 20;   // Corner radius for the task list in single-view mode
+
+    // Task ordering preference (numbered tasks or checkboxes) - set true for the style you want and false for the other
+    const preferredTaskOrdering = {
+        numbered: true, // true = ordered tasks, false = checkbox style
+        checkbox: false // true = checkbox style, false = ordered
+    };
+
+    // Font
+    const fontFamily = 'Inter'; // Supports all google fonts - https://fonts.google.com/ - ensure it matches Google Fonts spelling
+
+    // Header details for the bot overlay
+    const headerTitleFontSize = 16;   // Font size for header title
+    const headerTitleFontWeight = 600; // Font weight for header title
+    const showHeaderDescription = true;  // Set to true to display a header description
+    const taskHeaderDescription = "Progress isn’t about speed but consistency. Stay committed, and remember, small wins add up!"  // Customize header description text
+    const headerDescriptionFontSize = 13; // Font size for header description
+    const headerDescriptionFontWeight = 500; // Font weight for header description
+    const headerDetailsFontSize = 14;  // Font size for header details
+    const headerDetailsFontWeight = 500;  // Font weight for header details
+    const headerDetailsIconSize = 20; // Icon size for header details
+    const completionProgressFontSize = 14; // Font size for completion progress
+    const completionProgressFontWeight = 500; // Font weight for completion progress
+
+    // Tasks settings
+    const usernameFontSize = 14; // Font size for usernames
+    const usernameFontWeight = 600; // Font weight for usernames
+    const useUserTwitchColor = true;  // Use user's Twitch color for username in task list (true/false)
+    const taskFontSize = 14; // Font size for tasks
+    const taskFontWeight = 500; // Font weight for tasks
+    const italicsOnCompletedTask = true; // Set to true to italicize completed tasks
+    const checkBoxSize = 14;  // Size of checkboxes (applies if checkbox style is enabled)
+
 
     // Add task - use commands in this exact format
     const addTaskCommands = ['taskadd', 'addtask', 'task', 'add'];
@@ -170,7 +173,7 @@ const configs = (function () {
         headerDetailsFontSize,
         headerDetailsFontWeight,
         preferredTaskOrdering,
-        useUsernameColor,
+        useUserTwitchColor,
         preferredLayout,
         completionProgressFontSize,
         completionProgressFontWeight,

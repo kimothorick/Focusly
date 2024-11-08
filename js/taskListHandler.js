@@ -298,7 +298,7 @@
                 const userNameElement = document.createElement('div');
                 userNameElement.classList.add('user-name');
                 userNameElement.textContent = userId;
-                if (styles.useUsernameColor) {
+                if (styles.useUserTwitchColor) {
                     userNameElement.style.color = senderColor;
                 }
                 userTasksElement.appendChild(userNameElement);
