@@ -5,7 +5,7 @@
 
 # Focusly - Twitch Task Bot
 
-Focusly is a task management bot for Twitch streamers and viewers, designed for coworking and studying in real time.
+Focusly is a task management bot for Twitch streamers and viewers, designed for coworking and studying in real-time.
 With Focusly, you can manage tasks, track progress, and stay organized during streams without needing external tools. It
 uses a simple, customizable overlay for task management, allowing viewers to interact and stay productive.
 
@@ -15,7 +15,7 @@ uses a simple, customizable overlay for task management, allowing viewers to int
 - 🎨 Customizable UI: Set your task list’s appearance, fonts, and layout.
 - 🎮 Commands for Streamers and Viewers: Different commands for managing tasks, progress, and more.
 - 🔧 Admin Control: Moderators can delete tasks or clear task lists.
-- ⏱️ Real-time Task Updates: Streamers and viewers can interact with the task list in real time.
+- ⏱️ Real-time Task Updates: Streamers and viewers can interact with the task list in real-time.
 
 ## Getting Started
 
@@ -92,7 +92,7 @@ const testingMode = false;
 > during operation.
 
 ### Commands
-These section is long hence to make it easier, there are toggles to make it readable.
+This section is long; hence, to make it easier, there are toggles to make it readable.
 
 <details>
 <summary>All Commands</summary>
@@ -200,7 +200,7 @@ const finishTaskCommands = ['taskf', 'taskfinish', 'finishtask', 'taskdone', 'fi
 
 #### *9. Check All Incomplete Tasks Command*
 
-This removes selected user's tasks.
+This removes the selected user's tasks.
 
 ```javascript
  // Check incomplete tasks - use commands in this exact format
@@ -463,7 +463,7 @@ const customThemeColors = {
 ## Credits
 This project is inspired and built on top of the [Task-List](https://github.com/mohamed-tayeh/Task-List)
 by [MohFocus](https://www.twitch.tv/mohfocus)  
-Author of this project is [Rick Kimotho](https://www.twitch.tv/rickphilip)
+The author of this project is [Rick Kimotho](https://www.twitch.tv/rickphilip)
 
     
     
