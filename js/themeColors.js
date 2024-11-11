@@ -10,6 +10,7 @@ let themes = (function () {
         headerBackgroundColor: '#ffffff', // Background color for the header
         userTasksBackgroundColor: '#ffffff', // Background color for user tasks
         headerDescriptionTextColor: '#3F3F3F', // Header description text color
+        headerTitleColor: '#000000', //Text color for the header
         headerIconColor: '#f8f8f8', // Header icons color
         usernameColor: '#000000', // Username text color
         completedTextColor: '#3F3F3F', // Text color for completed tasks
@@ -31,7 +32,9 @@ let themes = (function () {
         usernameColor: '#DC7274', // Username text color
         headerBackgroundColor: '#F9CACB', // Background color for header
         userTasksBackgroundColor: '#F9CACB', // Background color for user tasks
+        headerTitleColor: '#DC7274', //Text color for the header
         headerDescriptionTextColor: '#DC7274', // Header description text color
+        headerDetailsTextColor: '#DC7274', // Header details text color
         headerIconColor: '#DC7274', // Header icons color
         dividerColor: '#F3BCBD', // Divider color for sections
         completedTextColor: '#DC7274', // Text color for completed tasks
@@ -51,6 +54,7 @@ let themes = (function () {
         usernameColor: '#ffffff', // Username text color
         headerBackgroundColor: 'rgba(0,0,0,0.8)', // Background color for header with transparency
         userTasksBackgroundColor: 'rgba(0,0,0,0.8)', // Background color for user tasks with transparency
+        headerTitleColor: '#ffffff', //Text color for the header
         headerDescriptionTextColor: '#E4E4E4', // Header description text color
         headerDetailsTextColor: '#E4E4E4', // Header details text color
         headerIconColor: '#E4E4E4', // Header icon color
@@ -69,22 +73,24 @@ let themes = (function () {
         mainColorVariant: '#3F3F3F', // Main color variant for text and elements
         taskCompleteMain: '#329B57', // Color for completed tasks
         taskTextColor: '#000000', // Text color for tasks
+        usernameColor: '#000000', // Username text color
         headerBackgroundColor: '#ffffff', // Background color for the header
         userTasksBackgroundColor: '#ffffff', // Background color for user tasks
+        headerTitleColor: '#000000', //Text color for the header
         headerDescriptionTextColor: '#3F3F3F', // Header description text color
+        headerDetailsTextColor: '#E4E4E4', // Header details text color
         headerIconColor: '#f8f8f8', // Header icon color
-        usernameColor: '#000000', // Username text color
+        dividerColor: '#E4E4E4', // Divider color between sections
         completedTextColor: '#3F3F3F', // Text color for completed tasks
         checkBoxColor: '#3F3F3F', // Color for checkboxes
         checkSymbolColor: '#ffffff', // Color for checkbox tick symbol
         completedCheckboxColor: '#329B57', // Checkbox color when completed
         completionProgressTextColor: '#4270C3', // Progress text color
         completionProgressBackgroundColor: '#D1DEF9', // Progress background color
-        dividerColor: '#E4E4E4', // Divider color between sections
     };
 
     // Set the preferred theme colors (default to light theme)
-    const preferredThemeColors = lightThemeColors;
+    const preferredThemeColors = blackTranslucentThemeColors;
 
     const modules = {
         preferredThemeColors

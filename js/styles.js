@@ -40,12 +40,14 @@
         document.documentElement.style.setProperty('--username-font-size', pixelToRem(styles.usernameFontSize));
         document.documentElement.style.setProperty('--username-font-weight', styles.usernameFontWeight.toString());
         document.documentElement.style.setProperty('--check-box-size', pixelToRem(styles.checkBoxSize));
+        document.documentElement.style.setProperty('--header-title-color' ,preferredThemeColors.headerTitleColor);
         document.documentElement.style.setProperty('--header-title-font-size', pixelToRem(styles.headerTitleFontSize));
         document.documentElement.style.setProperty('--header-title-font-weight', styles.headerTitleFontWeight.toString());
         document.documentElement.style.setProperty('--header-icon-color', preferredThemeColors.headerIconColor);
         document.documentElement.style.setProperty('--header-description-text-color', preferredThemeColors.headerDescriptionTextColor);
         document.documentElement.style.setProperty('--task-font-size', pixelToRem(styles.taskFontSize));
         document.documentElement.style.setProperty('--task-font-weight', styles.taskFontWeight.toString());
+        document.documentElement.style.setProperty('--task-text-color', preferredThemeColors.taskTextColor);
         document.documentElement.style.setProperty('--main-color-variant', preferredThemeColors.mainColorVariant);
         document.documentElement.style.setProperty('--task-complete-main', preferredThemeColors.taskCompleteMain);
         document.documentElement.style.setProperty('--main-text-color', preferredThemeColors.taskTextColor);
