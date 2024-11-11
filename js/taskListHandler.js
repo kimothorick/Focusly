@@ -190,12 +190,17 @@
                 setCurrentTask(sender, taskContent);
             } else if (commands.checkCurrentTaskCommands.indexOf(command) > -1) {
                 getCurrentTask(sender, tags);
+            } else if (commands.checkAllTasksCommands.indexOf(command) > -1) {
+                if (userHasTasks(sender)) {
+                    getAllUserTasks(sender);
+                } else {
+                    client.say(channel, `/me ${replaceStrings(responses.noTask, {
+                        user: sender
+                    })}`);
+                }
             } else if (commands.checkIncompleteTasksCommands.indexOf(command) > -1) {
                 let finalMsg = ""
                 if (userHasTasks(sender)) {
-                    /*finalMsg = replaceStrings(responses.allIncompleteTasks, {
-                        user: sender, tasks: getIncompleteTasks(sender)
-                    });*/
                     getIncompleteTasks(sender);
                 } else {
                     finalMsg = replaceStrings(responses.noTask, {
@@ -364,7 +369,6 @@
             userData.tasks[taskIndex].description = newContent;
             userTasks.set(userId, userData);
 
-
             // Update the DOM
             const userTasksElement = document.querySelector(`.user-tasks[data-user-id="${userId}"]`);
             if (userTasksElement) {
@@ -383,7 +387,6 @@
                 }
             }
 
-
             return replaceStrings(responses.taskEdited, {
                 user: userId,
                 taskNumber: taskId,
@@ -392,18 +395,25 @@
         }
 
         function getAllUserTasks(userId) {
+            console.log("Called!")
             const userData = userTasks.get(userId);
             if (!userData) {
-                return ""; // Return empty string for non-existent user
+                console.log("No userdata")
+                return; // Return empty string for non-existent user
             }
 
             const tasks = userData.tasks;
             if (!tasks.length) {
+                console.log("No tasks")
                 return null; // Inform user about empty list
             }
 
+            client.say(channel, `${replaceStrings(responses.allTasks, {
+                user: userId,
+                tasks: tasks.map((task, index) => `${index === 0 ? '' : '• '}  ${task.id}: ${task.description}`).join(' ')
+            })}`)
             // Construct the task list string
-            return tasks.map((task, index) => `${index === 0 ? '' : '• '}  ${task.id}: ${task.description}`).join(' ');
+            return true;
         }
 
         function getIncompleteTasks(userId) {
@@ -571,10 +581,8 @@
                 return true; // Keep the task
             });
 
-
             // Count the number of incomplete deleted tasks
             const deletedIncompleteTasks = deletedTasks.filter(task => !task.completed).length;
-
 
             // Reset task IDs after deletion and update currentTaskId
             userData.nextTaskId = 1;
@@ -626,7 +634,6 @@
                 }
             }
 
-
             // Send confirmation message based on deleted tasks
             if (deletedTasks.length > 0) {
                 const deletedTasksString = deletedTasks.map((task, index) => `${index === 0 ? '' : '• '} ${task.id}: ${task.description}`).join(' ');
@@ -658,13 +665,12 @@
                 })}`);
                 return; // User doesn't exist or has no tasks
             }
-// Count incomplete tasks before deletion
+            // Count incomplete tasks before deletion
             const incompleteTasksCount = userData.tasks.filter(task => !task.completed).length;
 
             userTasks.delete(userId);
 
             // Remove the user's task list from the DOM
-            // const taskListElement = document.getElementById('task-list');
             if (taskListElement) {
                 const userTasksElement = taskListElement.querySelector(`.user-tasks[data-user-id="${userId}"]`);
                 if (userTasksElement) {
@@ -702,7 +708,6 @@
             updateCounters();
             updateCompletionProgress();
             // Remove the user's task list from the DOM
-            // const taskListElement = document.getElementById('task-list');
             if (taskListElement) {
                 const userTasksElement = taskListElement.querySelector(`.user-tasks[data-user-id="${username}"]`);
                 if (userTasksElement) {
@@ -856,7 +861,6 @@
                     const userTasksElement = taskListElement.querySelector(`.user-tasks[data-user-id="${userId}"]`);
                     if (userTasksElement) {
                         const taskElements = userTasksElement.querySelectorAll('.task');
-
                         // Remove completed tasks and reassign datasetIds for remaining tasks
                         completedTasks.forEach(completedTask => {
                             const taskElement = userTasksElement.querySelector(`.task[data-task-id="${completedTask.id}"]`);

@@ -13,6 +13,7 @@ const configs = (function () {
     const username = '';  // Insert your bot’s account username here
     const oauth = '';     // Insert your bot’s OAuth token here
 
+
     // Enable to use dummy data, set false to remove dummy data and true to fill with dummy data
     const testingMode = false;
 
@@ -93,8 +94,8 @@ const configs = (function () {
     // Check incomplete tasks - use commands in this exact format
     const checkIncompleteTasksCommands = ['taskc', 'taskcheck', 'ctask', 'checktask', 'mytasks', 'check', 'tasks'];
 
-    // Check all tasks (upcoming feature) - use commands in this exact format
-    const checkAllTasksCommands = ['taskc', 'taskcheck', 'ctask', 'checktask', 'mytasks', 'check', 'tasks'];
+    // Check all tasks - use commands in this exact format
+    const checkAllTasksCommands = [  'alltasks'];
 
     // Help commands - use commands in this exact format
     const helpCommands = ['focusly', 'taskh', 'taskhelp', 'helptask'];
@@ -194,6 +195,7 @@ const configs = (function () {
         deleteTaskCommands,
         finishTaskCommands,
         checkIncompleteTasksCommands,
+        checkAllTasksCommands,
         helpCommands,
         adminDeleteCommands,
         adminClearDoneCommands,

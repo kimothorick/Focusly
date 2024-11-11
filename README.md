@@ -1,11 +1,11 @@
 
 [!["Buy Me A Coffee"](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/kimothorick)
 
-# STATUS: IN DEVELOPMENT - DO NOT USE UNTIL CHANGES ARE PUSHED TO THE MAIN BRANCH
+# STATUS: IN DEVELOPMENT
 
 # Focusly - Twitch Task Bot
 
-Focusly is a task management bot for Twitch streamers and viewers, designed for coworking and studying in real-time.
+Focusly is a task management bot for Twitch streamers and viewers, designed for coworking and studying in real time.
 With Focusly, you can manage tasks, track progress, and stay organized during streams without needing external tools. It
 uses a simple, customizable overlay for task management, allowing viewers to interact and stay productive.
 
@@ -15,7 +15,7 @@ uses a simple, customizable overlay for task management, allowing viewers to int
 - 🎨 Customizable UI: Set your task list’s appearance, fonts, and layout.
 - 🎮 Commands for Streamers and Viewers: Different commands for managing tasks, progress, and more.
 - 🔧 Admin Control: Moderators can delete tasks or clear task lists.
-- ⏱️ Real-time Task Updates: Streamers and viewers can interact with the task list in real-time.
+- ⏱️ Real-time Task Updates: Streamers and viewers can interact with the task list in real time.
 
 ## Getting Started
 
@@ -92,7 +92,7 @@ const testingMode = false;
 > during operation.
 
 ### Commands
-This section is long; hence, to make it easier, there are toggles to make it readable.
+These section is long hence to make it easier, there are toggles to make it readable.
 
 <details>
 <summary>All Commands</summary>
@@ -200,7 +200,7 @@ const finishTaskCommands = ['taskf', 'taskfinish', 'finishtask', 'taskdone', 'fi
 
 #### *9. Check All Incomplete Tasks Command*
 
-This removes the selected user's tasks.
+This returns all the selected user's incomplete tasks.
 
 ```javascript
  // Check incomplete tasks - use commands in this exact format
@@ -210,7 +210,19 @@ const checkIncompleteTasksCommands = ['taskc', 'taskcheck', 'ctask', 'checktask'
 Usage Example:
 > `!mytasks`
 
-#### *10. Help Command*
+#### *10. Check all Tasks Command*
+
+This returns all the selected user's tasks both complete and incomplete.
+
+```javascript
+// Check all tasks (upcoming feature) - use commands in this exact format
+const checkAllTasksCommands = ['alltasks'];
+```
+
+Usage Example:
+> `!alltasks`
+
+#### *11. Help Command*
 
 This returns a response with instructions on how to use the bot.
 
@@ -301,7 +313,7 @@ appearance settings as desired.
         <details>
         <summary>Toggle to see the different views.</summary>
 
-        <img src="resources/readme_imgs/SingleView.png" width="200"/>  <img src="resources/readme_imgs/MultiView.png" width="200"/>
+        <img alt="Image of the overlay's single-view design" src="resources/readme_imgs/SingleView.png" width="200"/>  <img alt="Image of the overlay's multi-view design" src="resources/readme_imgs/MultiView.png" width="200"/>
         </details>
 
       ``` javascript
@@ -357,7 +369,7 @@ appearance settings as desired.
   Set the header title, description, and font style for the header area in the overlay.
   <details>
   <summary> Toggle for header design and structure reference</summary>
-  <img src="resources/readme_imgs/FocuslyHeaderDesign.png"/>  <img src="resources/readme_imgs/FocuslyHeaderStructure.png"/>
+  <img alt="Image of the overlay's header design" src="resources/readme_imgs/FocuslyHeaderDesign.png"/>  <img  alt="Image of the overlay's header design structure" src="resources/readme_imgs/FocuslyHeaderStructure.png"/>
   </details>
 
     ```javascript
@@ -463,7 +475,7 @@ const customThemeColors = {
 ## Credits
 This project is inspired and built on top of the [Task-List](https://github.com/mohamed-tayeh/Task-List)
 by [MohFocus](https://www.twitch.tv/mohfocus)  
-The author of this project is [Rick Kimotho](https://www.twitch.tv/rickphilip)
+Author of this project is [Rick Kimotho](https://www.twitch.tv/rickphilip)
 
     
     

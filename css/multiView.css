@@ -134,6 +134,7 @@ body {
     overflow-y: hidden; /* This allows scrolling */
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
+    border-radius: var(--task-container-border-radius);
 }
 
 .user-tasks {
