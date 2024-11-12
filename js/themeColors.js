@@ -90,7 +90,7 @@ let themes = (function () {
     };
 
     // Set the preferred theme colors (default to light theme)
-    const preferredThemeColors = blackTranslucentThemeColors;
+    const preferredThemeColors = lightThemeColors;
 
     const modules = {
         preferredThemeColors
