@@ -267,6 +267,10 @@
                     });
                     client.say(channel, `/me ${finalMsg}`);
                 }
+            } else if(commands.helpCommands.indexOf(command)>-1){
+                client.say(channel, `/me ${replaceStrings(responses.taskHelp, {
+                    user: sender
+                })}`);
             }
 
             console.log(userTasks);

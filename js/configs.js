@@ -13,7 +13,6 @@ const configs = (function () {
     const username = '';  // Insert your bot’s account username here
     const oauth = '';     // Insert your bot’s OAuth token here
 
-
     // Enable to use dummy data, set false to remove dummy data and true to fill with dummy data
     const testingMode = false;
 
@@ -95,10 +94,10 @@ const configs = (function () {
     const checkIncompleteTasksCommands = ['taskc', 'taskcheck', 'ctask', 'checktask', 'mytasks', 'check', 'tasks'];
 
     // Check all tasks - use commands in this exact format
-    const checkAllTasksCommands = [  'alltasks'];
+    const checkAllTasksCommands = ['alltasks'];
 
     // Help commands - use commands in this exact format
-    const helpCommands = ['focusly', 'taskh', 'taskhelp', 'helptask'];
+    const helpCommands = ['taskh', 'taskhelp', 'helptask'];
 
     // Admin delete task - use commands in this exact format
     const adminDeleteCommands = ['taskadel', 'adel', 'adelete', 'admindelete'];
@@ -148,6 +147,7 @@ const configs = (function () {
     const adminUserTasksClearFailed = `@{mod} User has no tasks to be deleted. Please check their username and try again.`;
     const adminTaskListCleared = `@{mod} The task list has been cleared.`;
     const taskAlreadyCompleted = `@{user} Task {task} is already completed.`;
+    const taskHelp = `@{user}, Add tasks: !task <task1;task;> | Edit task: !edit <#> <task> | Set current task: !now <#> | Check current task: !current | Remove current task: !removecurrent | Delete tasks: !taskdel <#, #, #> | Delete all tasks: !deleteall | Mark tasks as done: !done <#, #, #> | Show incomplete tasks: !mytasks | Show all tasks: !alltasks | Help: !taskhelp`;
 
     // Commands object containing all user credentials for connecting the bot to the specified Twitch channel.
     const user = {
@@ -241,7 +241,7 @@ const configs = (function () {
         adminTaskListCleared,
         allIncompleteTasks,
         taskAlreadyCompleted,
-        allTasksCompleted
+        allTasksCompleted, taskHelp
     };
 
     // Return the module object containing user information and commands
