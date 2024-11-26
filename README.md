@@ -92,7 +92,7 @@ const testingMode = false;
 > during operation.
 
 ### Commands
-These section is long hence to make it easier, there are toggles to make it readable.
+This section is long; hence, to make it easier, there are toggles to make it readable.
 
 <details>
 <summary>All Commands</summary>
