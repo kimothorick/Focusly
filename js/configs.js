@@ -22,8 +22,8 @@ const configs = (function () {
 
     // Layout preference - set true for the view you want and false for the other
     const preferredLayout = {
-        singleView: false, // true = single-view, false = multi-view
-        multiView: true,   // true = multi-view, false = single-view
+        singleView: true, // true = single-view, false = multi-view
+        multiView: false,   // true = multi-view, false = single-view
     };
 
     // UI settings for single/multi-view modes
@@ -241,7 +241,8 @@ const configs = (function () {
         adminTaskListCleared,
         allIncompleteTasks,
         taskAlreadyCompleted,
-        allTasksCompleted, taskHelp
+        allTasksCompleted,
+        taskHelp
     };
 
     // Return the module object containing user information and commands

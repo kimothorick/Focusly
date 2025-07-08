@@ -11,8 +11,6 @@
         const styles = configs.styles;
         const style = document.createElement('style');
         document.head.appendChild(style);
-        const headerDescriptionElement = document.querySelector('.header-description');
-        headerDescriptionElement.textContent = styles.taskHeaderDescription
 
         //Adds date
         const today = new Date();
@@ -30,8 +28,8 @@
         let totalCompletedTasks = 0;
 
         updateCounters();
-        updateCompletionProgress()
-
+        updateCompletionProgress();
+        window.taskAnimations.initScrolling();  // Infinite scrolling
 
         // Using a counter for unique task IDs
         const taskListElement = document.getElementById('task-list');
@@ -42,57 +40,6 @@
                 username: `${user.username}`, password: `${user.oauth}`
             }, channels: [`${user.channel}`]
         });
-
-        let scrollSpeed = 0.4; // A fraction for a smoother, slower scroll
-        let accumulatedScroll = 0;
-        let scrollDown = true; // Initial direction
-        let isPaused = false; // Track if scrolling is paused
-        const pauseDuration = 6000; // Pause duration in milliseconds
-
-        function autoScroll() {
-            const scrollPosition = taskListElement.scrollTop;
-            const scrollHeight = taskListElement.scrollHeight;
-            const containerHeight = taskListElement.clientHeight;
-
-            if (!isPaused) {
-                accumulatedScroll += scrollSpeed; // Increment the accumulated scroll by the fractional speed
-
-                if (accumulatedScroll >= 1) {
-                    const scrollIncrement = Math.floor(accumulatedScroll); // Calculate whole pixels to scroll
-                    accumulatedScroll -= scrollIncrement; // Remove the scrolled pixels from the accumulated value
-
-                    if (scrollDown) {
-                        // Scroll down
-                        taskListElement.scrollTop += scrollIncrement;
-                        if (scrollPosition + containerHeight >= scrollHeight) {
-                            // Switch to scroll up when reaching the bottom
-                            scrollDown = false;
-                            pauseScrolling(); // Pause before switching
-                        }
-                    } else {
-                        // Scroll up
-                        taskListElement.scrollTop -= scrollIncrement;
-                        if (scrollPosition <= 0) {
-                            // Switch to scroll down when reaching the top
-                            scrollDown = true;
-                            pauseScrolling(); // Pause before switching
-                        }
-                    }
-                }
-            }
-
-            requestAnimationFrame(autoScroll);
-        }
-
-        function pauseScrolling() {
-            isPaused = true; // Set paused state to true
-            setTimeout(() => {
-                isPaused = false; // Resume scrolling after the pause duration
-            }, pauseDuration);
-        }
-
-        // Start scrolling
-        autoScroll();
 
         client.connect().catch(console.error);
 
@@ -141,7 +88,7 @@
                 // Fetch updated user data after adding tasks
                 const updatedUserData = userTasks.get(sender);
 
-                // Check for task addition and send appropriate message
+                // Check for task addition and send an appropriate message
                 if (existingTaskCount === 0 && updatedUserData.tasks.length === 1) {
                     // Single task added (initial task)
                     const addedTask = updatedUserData.tasks[0];
@@ -159,7 +106,7 @@
                     });
                     client.say(channel, `/me ${finalMsg}`);
                 } else if (updatedUserData.tasks.length > existingTaskCount) {
-                    // Tasks added to existing list
+                    // Tasks added to the existing list
                     const addedTasks = updatedUserData.tasks.slice(existingTaskCount);
                     const addedTasksString = addedTasks.map((task, index) =>
                         `${index === 0 ? '' : '• '} ${task.id}: ${task.description}`).join(' ');
@@ -409,7 +356,7 @@
             const tasks = userData.tasks;
             if (!tasks.length) {
                 console.log("No tasks")
-                return null; // Inform user about empty list
+                return null; // Inform user about the empty list
             }
 
             client.say(channel, `${replaceStrings(responses.allTasks, {
@@ -593,11 +540,11 @@
             userData.tasks.forEach((task, index) => {
                 task.id = userData.nextTaskId++;
                 if (task.id === userData.currentTaskId) {
-                    userData.currentTaskId = newId; // Update currentTaskId if necessary
+                    userData.currentTaskId = newId; // Update the currentTaskId if necessary
                 }
             });
 
-            // Remove user from map if no tasks remaining
+            // Remove a user from the map if no tasks remaining
             if (userData.tasks.length === 0) {
                 userTasks.delete(userId);
                 updateCounters();
@@ -638,7 +585,7 @@
                 }
             }
 
-            // Send confirmation message based on deleted tasks
+            // Sends a confirmation message based on deleted tasks
             if (deletedTasks.length > 0) {
                 const deletedTasksString = deletedTasks.map((task, index) => `${index === 0 ? '' : '• '} ${task.id}: ${task.description}`).join(' ');
                 const finalMsg = deletedTasks.length === 1
@@ -774,7 +721,7 @@
 
             const completedTasks = tasksToComplete.map(task => {
                 task.completed = true;
-                task.isCurrent = false; // Remove current task status if applicable
+                task.isCurrent = false; // Remove the current task status if applicable
                 totalCompletedTasks++;
                 return task;
             });
@@ -793,7 +740,7 @@
             }
 
             updateCompletionProgress();
-            // Send confirmation message based on the number of completed tasks
+            // Send a confirmation message based on the number of completed tasks
             if (completedTasks.length === 1) {
                 const completedTask = completedTasks[0];
                 const finalMsg = replaceStrings(responses.singleTaskFinished, {
@@ -995,7 +942,7 @@
                         "Meditate"
                     ], color: "#2785c0"
                 },
-                {
+               {
                     id: "davidlee",
                     tasks: [
                         "Plan the vacation",
@@ -1005,66 +952,66 @@
                         "Notify colleagues"
                     ], color: "#490a4b"
                 },
-                {
-                    id: "emilychen",
-                    tasks: [
-                        "Study for the exam",
-                        "Write the essay",
-                        "Review the notes",
-                        "Attend the lecture",
-                        "Participate in the discussion"
-                    ], color: "#8a0a57"
-                },
-                {
-                    id: "FrankGarcia",
-                    tasks: [
-                        "Water the plants",
-                        "Feed the cat",
-                        "Mow the lawn",
-                        "Trim the hedges",
-                        "Clean the gutters"
-                    ], color: "#83159d"
-                },
-                {
-                    id: "GraceKim",
-                    tasks: [
-                        "Cook dinner",
-                        "Bake a cake",
-                        "Set the table",
-                        "Clean the dishes",
-                        "Put away groceries"
-                    ], color: "#c23737"
-                },
-                {
-                    id: "HenryNguyen",
-                    tasks: [
-                        "Write a blog post",
-                        "Create a social media post",
-                        "Respond to comments",
-                        "Optimize website SEO",
-                        "Analyze website traffic"
-                    ], color: "#2e751e"
-                },
-                {
-                    id: "isabellalopez",
-                    tasks: [
-                        "Go to the gym",
-                        "Lift weights",
-                        "Do cardio",
-                        "Stretch",
-                        "Cool down"
-                    ], color: "#2785c0"
-                },
-                {
-                    id: "JacobTaylor",
-                    tasks: [
-                        "Learn a new programming language",
-                        "Build a web application",
-                        "Contribute to open source projects",
-                        "Attend a tech conference",
-                        "Network with other developers"
-                    ], color: "#349355"
-                }
+                 {
+                     id: "emilychen",
+                     tasks: [
+                         "Study for the exam",
+                         "Write the essay",
+                         "Review the notes",
+                         "Attend the lecture",
+                         "Participate in the discussion"
+                     ], color: "#8a0a57"
+                 },
+                 {
+                     id: "FrankGarcia",
+                     tasks: [
+                         "Water the plants",
+                         "Feed the cat",
+                         "Mow the lawn",
+                         "Trim the hedges",
+                         "Clean the gutters"
+                     ], color: "#83159d"
+                 },
+                 {
+                     id: "GraceKim",
+                     tasks: [
+                         "Cook dinner",
+                         "Bake a cake",
+                         "Set the table",
+                         "Clean the dishes",
+                         "Put away groceries"
+                     ], color: "#c23737"
+                 },
+                 {
+                     id: "HenryNguyen",
+                     tasks: [
+                         "Write a blog post",
+                         "Create a social media post",
+                         "Respond to comments",
+                         "Optimize website SEO",
+                         "Analyze website traffic"
+                     ], color: "#2e751e"
+                 },
+                 {
+                     id: "isabellalopez",
+                     tasks: [
+                         "Go to the gym",
+                         "Lift weights",
+                         "Do cardio",
+                         "Stretch",
+                         "Cool down"
+                     ], color: "#2785c0"
+                 },
+                 {
+                     id: "JacobTaylor",
+                     tasks: [
+                         "Learn a new programming language",
+                         "Build a web application",
+                         "Contribute to open source projects",
+                         "Attend a tech conference",
+                         "Network with other developers"
+                     ], color: "#349355"
+                 }
             ];
             users.forEach(user => {
                 user.tasks.forEach(taskDescription => {
