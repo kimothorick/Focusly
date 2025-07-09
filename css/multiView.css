@@ -98,7 +98,7 @@ body {
 }
 
 .material-symbols-outlined {
-    font-size: var(--header-details-icon-size);
+   /* font-size: var(--header-details-icon-size);*/
     font-variation-settings: 'FILL' 0,
     'wght' 200,
     'GRAD' 0,

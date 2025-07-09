@@ -25,11 +25,13 @@ uses a simple, customizable overlay for task management, allowing viewers to int
    You can use your existing Twitch account or create a new one specifically for the bot.
 
 
-2. **OAuth Token**:  
-   Generate an OAuth token to allow the bot to connect to Twitch.
-    - Visit the [Twitch Chat OAuth Password Generator](https://twitchapps.com/tmi/).
-    - Log in with your chosen account and generate an OAuth token.
-    - Copy the token provided; you’ll need this for the bot configuration.
+2. **OAuth Token**:
+   Generate an OAuth token to allow the bot to connect to Twitch and perform actions on your behalf. 
+      - Visit the [Twitch Chat OAuth Password Generator](https://twitchtokengenerator.com/) website.
+      - Log in with the Twitch account you want the bot to operate under. 
+      - Approve the requested permissions for the token generator. 
+      - Copy the generated token (it will start with oauth:). You'll need this for the bot configuration. 
+      - Important: Treat this token like a password. Do not share it publicly.
 
 ### Setup
 
@@ -422,7 +424,7 @@ appearance settings as desired.
 Customize the appearance of your task overlay by selecting or modifying themes to suit your preferred style. Each theme
 controls colors for various UI elements, such as backgrounds, text, tasks, and icons.
 
-To configure the theme for your overlay, navigate to the `themeColors.js` in the `js folder` file. Inside, you’ll find
+To configure the theme for your overlay, navigate to the `themeColors.js` file in the `js folder`. Inside, you’ll find
 several predefined
 themes:
 
@@ -476,6 +478,3 @@ const customThemeColors = {
 This project is inspired and built on top of the [Task-List](https://github.com/mohamed-tayeh/Task-List)
 by [MohFocus](https://www.twitch.tv/mohfocus)  
 Author of this project is [Rick Kimotho](https://www.twitch.tv/rickphilip)
-
-    
-    

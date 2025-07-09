@@ -11,6 +11,8 @@
         const styles = configs.styles;
         const style = document.createElement('style');
         document.head.appendChild(style);
+        const headerDescriptionElement = document.querySelector('.header-description');
+        headerDescriptionElement.textContent = styles.taskHeaderDescription
 
         //Adds date
         const today = new Date();
