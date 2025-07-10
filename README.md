@@ -1,5 +1,5 @@
 
-[![GitHub package.json version](https://img.shields.io/github/v/release/https://github.com/kimothorick/focusly)](https://github.com/https://github.com/kimothorick/focusly/releases/latest) [!["Buy Me A Coffee"](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/kimothorick) [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://www.twitch.tv/rickphilip)
+![Latest Release](https://img.shields.io/github/v/release/kimothorick/Focusly?sort=semver) [!["Buy Me A Coffee"](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/kimothorick) [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://www.twitch.tv/rickphilip)
 
 # Focusly - Twitch Task Bot
 
