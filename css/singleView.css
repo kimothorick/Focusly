@@ -117,7 +117,6 @@ body {
     overflow-y: hidden; /* This allows scrolling */
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
-
 }
 
 .user-tasks {
@@ -147,7 +146,6 @@ body {
 
 .task-id {
     margin-right: 9px;
-
 }
 
 .fade-in {
@@ -206,6 +204,11 @@ body {
     flex-grow: 1; /* Allow the description to grow */
     color: var(--task-text-color);
 }
+
+.task-description.taskCompleted {
+    color: var(--completed-text-color);
+}
+
 
 .task-number {
     font-size: var(--task-font-size);
