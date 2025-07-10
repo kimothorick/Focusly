@@ -209,6 +209,10 @@ body {
     color: var(--task-text-color);
 }
 
+.task-description.taskCompleted {
+    color: var(--completed-text-color);
+}
+
 .task-number {
     font-size: var(--task-font-size);
     font-weight: var(--task-font-weight);
