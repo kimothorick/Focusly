@@ -11,7 +11,7 @@ let themes = (function () {
         userTasksBackgroundColor: '#ffffff', // Background color for user tasks
         headerDescriptionTextColor: '#3F3F3F', // Header description text color
         headerTitleColor: '#000000', //Text color for the header
-        headerIconColor: '#f8f8f8', // Header icons color
+        headerIconColor: '#3F3F3F', // Header icons color
         usernameColor: '#000000', // Username text color
         completedTextColor: '#3F3F3F', // Text color for completed tasks
         checkBoxColor: '#3F3F3F', // Color for checkboxes
