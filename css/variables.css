@@ -1,13 +1,12 @@
 :root {
     --width: 410px;
     --height: 660px;
-    --main-color-variant: #3F3F3F;
     --task-complete-main: #2879E4;
     --header-description-font-size: 12px;
     --header-description-font-weight: 500;
     --header-description-text-color: #9b2e2e;
     --main-text-color: 'black';
-    --completed-text-color: #3F3F3F;
+    --completed-task-text-color: #3F3F3F;
     --font-family: 'Inter';
     --username-font-size: 1400px;
     --username-font-weight: 400;
@@ -16,7 +15,6 @@
     --check-box-color: #3F3F3F;
     --check-symbol-color: #ffffff;
     --completed-checkbox-color: #2879E4;
-    --tick-color: 'white';
     --task-font-size: 14px;
     --task-font-weight: 500;
     --header-title-font-size: 16px;

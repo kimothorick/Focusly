@@ -40,7 +40,7 @@ body {
 }
 
 .header, .footer {
-    flex-shrink: 0; /* Prevent these elements from shrinking */
+    flex-shrink: 0;
 }
 
 .header-top-portion {
@@ -70,7 +70,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-line-clamp: 4;
     line-clamp: 4;
     -webkit-box-orient: vertical;
 }
@@ -113,10 +113,10 @@ body {
     flex-direction: column;
     padding: 0 16px;
     gap: 18px;
-    flex: 1; /* Take up remaining space */
-    overflow-y: hidden; /* This allows scrolling */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
+    flex: 1;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .user-tasks {
@@ -131,11 +131,11 @@ body {
 }
 
 .user-tasks:first-child {
-    margin-top: 8px; /* Adjust the margin as needed */
+    margin-top: 8px;
 }
 
 .user-tasks:last-child {
-    margin-bottom: 2px; /* Adjust the margin as needed */
+    margin-bottom: 2px;
 }
 
 .user-task-list {
@@ -156,7 +156,7 @@ body {
     font-size: var(--task-font-size);
     font-weight: var(--task-font-weight);
     letter-spacing: 0;
-    color: var(--completed-text-color);
+    color: var(--completed-task-text-color);
     text-decoration: line-through;
     font-style: var(--completed-task-font-style);
 }
@@ -169,7 +169,7 @@ body {
     border-radius: 50%;
     border: 1px solid var(--check-box-color);
     margin: 2px 10px 0 0;
-    flex-shrink: 0; /* Prevent the indicator from shrinking */
+    flex-shrink: 0;
 }
 
 .task-indicator.completed {
@@ -201,12 +201,12 @@ body {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    flex-grow: 1; /* Allow the description to grow */
+    flex-grow: 1;
     color: var(--task-text-color);
 }
 
 .task-description.taskCompleted {
-    color: var(--completed-text-color);
+    color: var(--completed-task-text-color);
 }
 
 
@@ -220,7 +220,7 @@ body {
 .task-number.completed {
     font-size: var(--task-font-size);
     font-weight: var(--task-font-weight);
-    color: var(--completed-text-color);
+    color: var(--completed-task-text-color);
 }
 
 .footer {

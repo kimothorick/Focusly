@@ -1,7 +1,8 @@
-
 ![Latest Release](https://img.shields.io/github/v/release/kimothorick/Focusly?sort=semver) [!["Buy Me A Coffee"](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?logo=buymeacoffee&logoColor=000)](https://buymeacoffee.com/kimothorick) [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?logo=Twitch&logoColor=white)](https://www.twitch.tv/rickphilip)
 
 # Focusly - Twitch Task Bot
+
+ <img src="resources/readme_imgs/FocuslyGithubShowcaseBanner.png" alt="A screenshot showing browser source properties" >
 
 Focusly is a task management bot for Twitch streamers and viewers, designed for coworking and studying in real time.
 With Focusly, you can manage tasks, track progress, and stay organized during streams without needing external tools. It
@@ -24,12 +25,12 @@ uses a simple, customizable overlay for task management, allowing viewers to int
 
 
 2. **OAuth Token**:
-   Generate an OAuth token to allow the bot to connect to Twitch and perform actions on your behalf. 
-      - Visit the [Twitch Chat OAuth Password Generator](https://twitchtokengenerator.com/) website.
-      - Log in with the Twitch account you want the bot to operate under. 
-      - Approve the requested permissions for the token generator. 
-      - Copy the generated token (it will start with oauth:). You'll need this for the bot configuration. 
-      - Important: Treat this token like a password. Do not share it publicly.
+   Generate an OAuth token to allow the bot to connect to Twitch and perform actions on your behalf.
+    - Visit the [Twitch Chat OAuth Password Generator](https://twitchtokengenerator.com/) website.
+    - Log in with the Twitch account you want the bot to operate under.
+    - Approve the requested permissions for the token generator.
+    - Copy the generated token (it will start with oauth:). You'll need this for the bot configuration.
+    - Important: Treat this token like a password. Do not share it publicly.
 
 ### Setup
 
@@ -92,6 +93,7 @@ const testingMode = false;
 > during operation.
 
 ### Commands
+
 This section is long; hence, to make it easier, there are toggles to make it readable.
 
 <details>
@@ -423,13 +425,14 @@ Customize the appearance of your task overlay by selecting or modifying themes t
 controls colors for various UI elements, such as backgrounds, text, tasks, and icons.
 
 To configure the theme for your overlay, navigate to the `themeColors.js` file in the `js folder`. Inside, you’ll find
-several predefined
-themes:
+several predefined themes:
 
 1. Light Theme
 2. Pink Theme
-3. Black Translucent Theme
-4. Custom Theme
+3. Purple Theme
+4. Orange Theme
+5. Black Translucent Theme
+6. Custom Theme (This can be used to achieve your own custom theme)
 
 Each theme is stored as an object (lightThemeColors, pinkThemeColors, etc.) with customizable color properties. To
 select your preferred theme, assign the desired theme object to the preferredThemeColors variable within the same file.
@@ -453,19 +456,17 @@ Here are all colors that you can change:
 ```javascript
 // Custom theme colors
 const customThemeColors = {
-    backgroundColor: '#ffffff', // Background color of the app
-    mainColorVariant: '#3F3F3F', // Main color variant for text and elements
-    taskCompleteMain: '#329B57', // Color for completed tasks
     taskTextColor: '#000000', // Text color for tasks
     headerBackgroundColor: '#ffffff', // Background color for the header
     userTasksBackgroundColor: '#ffffff', // Background color for user tasks
     headerDescriptionTextColor: '#3F3F3F', // Header description text color
     headerIconColor: '#f8f8f8', // Header icon color
     usernameColor: '#000000', // Username text color
-    completedTextColor: '#3F3F3F', // Text color for completed tasks
+    completedTaskTextColor: '#3F3F3F', // Text color for completed tasks
     checkBoxColor: '#3F3F3F', // Color for checkboxes
     checkSymbolColor: '#ffffff', // Color for checkbox tick symbol
     completedCheckboxColor: '#329B57', // Checkbox color when completed
+    completedTaskTextColor: '#3F3F3F', // Text color for completed tasks
     completionProgressTextColor: '#4270C3', // Progress text color
     completionProgressBackgroundColor: '#D1DEF9', // Progress background color
     dividerColor: '#E4E4E4', // Divider color between sections
@@ -473,6 +474,7 @@ const customThemeColors = {
 ```
 
 ## Credits
+
 This project is inspired and built on top of the [Task-List](https://github.com/mohamed-tayeh/Task-List)
 by [MohFocus](https://www.twitch.tv/mohfocus)  
 Author of this project is [Rick Kimotho](https://www.twitch.tv/rickphilip)

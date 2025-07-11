@@ -40,7 +40,7 @@
         document.documentElement.style.setProperty('--username-font-size', pixelToRem(styles.usernameFontSize));
         document.documentElement.style.setProperty('--username-font-weight', styles.usernameFontWeight.toString());
         document.documentElement.style.setProperty('--check-box-size', pixelToRem(styles.checkBoxSize));
-        document.documentElement.style.setProperty('--header-title-color' ,preferredThemeColors.headerTitleColor);
+        document.documentElement.style.setProperty('--header-title-color', preferredThemeColors.headerTitleColor);
         document.documentElement.style.setProperty('--header-title-font-size', pixelToRem(styles.headerTitleFontSize));
         document.documentElement.style.setProperty('--header-title-font-weight', styles.headerTitleFontWeight.toString());
         document.documentElement.style.setProperty('--header-icon-color', preferredThemeColors.headerIconColor);
@@ -48,15 +48,12 @@
         document.documentElement.style.setProperty('--task-font-size', pixelToRem(styles.taskFontSize));
         document.documentElement.style.setProperty('--task-font-weight', styles.taskFontWeight.toString());
         document.documentElement.style.setProperty('--task-text-color', preferredThemeColors.taskTextColor);
-        document.documentElement.style.setProperty('--main-color-variant', preferredThemeColors.mainColorVariant);
-        document.documentElement.style.setProperty('--task-complete-main', preferredThemeColors.taskCompleteMain);
         document.documentElement.style.setProperty('--main-text-color', preferredThemeColors.taskTextColor);
-        document.documentElement.style.setProperty('--completed-text-color', preferredThemeColors.completedTextColor);
+        document.documentElement.style.setProperty('--completed-task-text-color', preferredThemeColors.completedTaskTextColor);
         document.documentElement.style.setProperty('--check-box-color', preferredThemeColors.checkBoxColor);
         document.documentElement.style.setProperty('--check-symbol-color', preferredThemeColors.checkSymbolColor);
         document.documentElement.style.setProperty('--completed-checkbox-color', preferredThemeColors.completedCheckboxColor);
         document.documentElement.style.setProperty('--username-color', preferredThemeColors.usernameColor)
-        document.documentElement.style.setProperty('--tick-color', preferredThemeColors.tickColor);
         document.documentElement.style.setProperty('--divider-color', preferredThemeColors.dividerColor);
         document.documentElement.style.setProperty('--completion-progress-background-color', preferredThemeColors.completionProgressBackgroundColor);
         document.documentElement.style.setProperty('--completion-progress-text-color', preferredThemeColors.completionProgressTextColor);

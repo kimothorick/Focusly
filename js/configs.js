@@ -36,8 +36,8 @@ const configs = (function () {
 
     // Task ordering preference (numbered tasks or checkboxes) - set true for the style you want and false for the other
     const preferredTaskOrdering = {
-        numbered: true, // true = ordered tasks, false = checkbox style
-        checkbox: false // true = checkbox style, false = ordered
+        numbered: false, // true = ordered tasks, false = checkbox style
+        checkbox: true // true = checkbox style, false = ordered
     };
 
     // Font
@@ -59,7 +59,7 @@ const configs = (function () {
     // Tasks settings
     const usernameFontSize = 14; // Font size for usernames
     const usernameFontWeight = 600; // Font weight for usernames
-    const useUserTwitchColor = true;  // Use user's Twitch color for username in task list (true/false)
+    const useUserTwitchColor = true;  // Use user's Twitch color for username in the task list (true/false)
     const taskFontSize = 14; // Font size for tasks
     const taskFontWeight = 500; // Font weight for tasks
     const italicsOnCompletedTask = true; // Set to true to italicize completed tasks
