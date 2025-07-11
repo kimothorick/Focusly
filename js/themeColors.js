@@ -45,6 +45,50 @@ let themes = (function () {
         completionProgressTextColor: '#DC7274', // Progress text color
     };
 
+    // Purple theme colors
+    const purpleThemeColors = {
+        backgroundColor: '#D0CAF9', // Background color of the app
+        mainColorVariant: '#D0CAF9', // Main pink color
+        taskCompleteMain: '#4E3395', // Color for completed tasks
+        taskTextColor: '#4E3395', // Text color for tasks
+        usernameColor: '#4E3395', // Username text color
+        headerBackgroundColor: '#D0CAF9', // Background color for header
+        userTasksBackgroundColor: '#D0CAF9', // Background color for user tasks
+        headerTitleColor: '#4E3395', //Text color for the header
+        headerDescriptionTextColor: '#4E3395', // Header description text color
+        headerDetailsTextColor: '#4E3395', // Header details text color
+        headerIconColor: '#4E3395', // Header icons color
+        dividerColor: '#CEC6E9', // Divider color for sections
+        completedTextColor: '#4E3395', // Text color for completed tasks
+        checkBoxColor: '#4E3395', // Color for checkboxes
+        checkSymbolColor: '#ffffff', // Color for checkbox tick symbol
+        completedCheckboxColor: '#4E3395', // Checkbox color when completed
+        completionProgressBackgroundColor: '#ffffff', // Progress background color
+        completionProgressTextColor: '#4E3395', // Progress text color
+    };
+
+    // Orange theme colors
+    const orangeThemeColors = {
+        backgroundColor: '#F9E3CB', // Background color of the app
+        mainColorVariant: '#F9E3CB', // Main pink color
+        taskCompleteMain: '#CD7014', // Color for completed tasks
+        taskTextColor: '#CD7014', // Text color for tasks
+        usernameColor: '#CD7014', // Username text color
+        headerBackgroundColor: '#F9E3CB', // Background color for header
+        userTasksBackgroundColor: '#F9E3CB', // Background color for user tasks
+        headerTitleColor: '#CD7014', //Text color for the header
+        headerDescriptionTextColor: '#CD7014', // Header description text color
+        headerDetailsTextColor: '#CD7014', // Header details text color
+        headerIconColor: '#CD7014', // Header icons color
+        dividerColor: '#F3D9BD', // Divider color for sections
+        completedTextColor: '#D48435', // Text color for completed tasks
+        checkBoxColor: '#CD7014', // Color for checkboxes
+        checkSymbolColor: '#ffffff', // Color for checkbox tick symbol
+        completedCheckboxColor: '#CD7014', // Checkbox color when completed
+        completionProgressBackgroundColor: '#ffffff', // Progress background color
+        completionProgressTextColor: '#CD7014', // Progress text color
+    };
+
     // Black translucent theme colors
     const blackTranslucentThemeColors = {
         backgroundColor: 'rgba(0,0,0,0.8)', // Background color of the app
