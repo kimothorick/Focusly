@@ -232,6 +232,7 @@ const THEME_PRESETS = {
 export default function SettingsPage() {
     const [fileHandle, setFileHandle] = useState(null);
     const [saveStatus, setSaveStatus] = useState('');
+    const [saveSuccess, setSaveSuccess] = useState(false);
     const [activeTab, setActiveTab] = useState('section-appearance'); // Default to appearance for easier color editing
     const [themeDev, setThemeDev] = useState('light'); // UI theme state
     const [selectedPreset, setSelectedPreset] = useState('custom'); // Track selected preset
@@ -557,8 +558,12 @@ export default function SettingsPage() {
             await writable.write(newContent);
             await writable.close();
 
-            setSaveStatus('Settings saved successfully! Refresh OBS source.');
-            setTimeout(() => setSaveStatus(''), 4000);
+            // Success feedback via button
+            setSaveSuccess(true);
+            setTimeout(() => setSaveSuccess(false), 2000);
+
+            // Clear any previous status text
+            setSaveStatus('');
 
         } catch (err) {
             console.error(err);
@@ -601,7 +606,7 @@ export default function SettingsPage() {
                             className={`nav-link ${activeTab === 'section-preview' ? 'active' : ''}`}
                             onClick={() => setActiveTab('section-preview')}
                         >
-                            Preview
+                            Messages
                         </div>
                     </div>
                 </div>
@@ -673,7 +678,7 @@ export default function SettingsPage() {
                                 <div className="page-title">
                                     <h1>
                                         {activeTab === 'section-auth' ? 'Authentication' :
-                                            activeTab === 'section-preview' ? 'Message Preview' :
+                                            activeTab === 'section-preview' ? 'Messages' :
                                                 activeTab === 'section-commands' ? 'Commands Reference' :
                                                     'Appearance'}
                                     </h1>
@@ -707,7 +712,7 @@ export default function SettingsPage() {
                                             </div>
                                             <div className="form-group">
                                                 <label>Channel Name</label>
-                                                <input type="text" className="form-control" placeholder="e.g. ninja" value={configs.user.channel} onChange={(e) => handleChange('user', 'channel', e.target.value)} />
+                                                <input type="text" className="form-control" placeholder="e.g. rickphilip" value={configs.user.channel} onChange={(e) => handleChange('user', 'channel', e.target.value)} />
                                             </div>
                                             <div className="form-group">
                                                 <label>Bot Username</label>
@@ -1165,9 +1170,20 @@ export default function SettingsPage() {
                                     <span className="material-symbols-rounded">upload_file</span>
                                     Load
                                 </button>
-                                <button onClick={handleSave} className="btn btn-primary">
-                                    <span className="material-symbols-rounded">save</span>
-                                    Save
+                                <button
+                                    onClick={handleSave}
+                                    className="btn btn-primary"
+                                    style={{
+                                        backgroundColor: saveSuccess ? '#22c55e' : '', // Green 500
+                                        borderColor: saveSuccess ? '#22c55e' : '',
+                                        transition: 'all 0.2s ease',
+                                        minWidth: '90px'
+                                    }}
+                                >
+                                    <span className="material-symbols-rounded">
+                                        {saveSuccess ? 'check' : 'save'}
+                                    </span>
+                                    {saveSuccess ? 'Saved!' : 'Save'}
                                 </button>
                             </div>
                         </div>
