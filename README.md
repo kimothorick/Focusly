@@ -4,6 +4,10 @@
 
  <img src="resources/readme_imgs/FocuslyGithubShowcaseBanner.png" alt="A screenshot showing browser source properties" >
 
+> [!IMPORTANT]
+> Currently in testing before full release
+
+
 Focusly is a task management bot for Twitch streamers and viewers, designed for coworking and studying in real time.
 With Focusly, you can manage tasks, track progress, and stay organized during streams without needing external tools. It
 uses a simple, customizable overlay for task management, allowing viewers to interact and stay productive.
