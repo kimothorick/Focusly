@@ -65,7 +65,7 @@ The easiest way to configure Focusly is using the built-in Settings Page. This i
 > [!TIP]
 > Use the **Messages** tab to see how your bot messages will look in chat, and the **Commands** tab to see a reference of all available commands.
 
-<img src="resources/readme_imgs/configsettings.png" alt="Settings Page Configuration" width="600">
+<img src="resources/readme_imgs/ConfigSettings.png" alt="Settings Page Configuration">
 
 ### Enable Testing
 
