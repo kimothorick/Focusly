@@ -1,0 +1,571 @@
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html {
+    background-color: transparent !important;
+}
+
+body {
+    max-width: var(--width);
+    max-height: var(--height);
+    display: flex;
+    font-family: var(--font-family), serif;
+    background-color: transparent !important;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container,
+.header {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main-container {
+    height: 100%;
+    gap: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    overflow: hidden;
+}
+
+/* Multi-View Specifics */
+.header {
+    padding: 24px 24px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-shrink: 0;
+    border-radius: var(--header-border-radius);
+    background-color: var(--header-background-color);
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: var(--header-title-font-weight, 700);
+    color: var(--header-title-color);
+    line-height: 1.2;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--header-stats-size, 13px);
+    font-weight: var(--header-stats-font-weight, 500);
+    color: var(--header-title-color);
+}
+
+.header-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--header-stats-size, 13px);
+    font-weight: var(--header-stats-font-weight, 500);
+    color: var(--header-title-color);
+}
+
+.header-description {
+    font-size: var(--header-description-font-size, 14px);
+    font-weight: var(--header-desc-font-weight, 400);
+    color: var(--header-title-color);
+    line-height: 1.4;
+}
+
+.header-main-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+}
+
+.header-content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.header-progress-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.header-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.circular-progress-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-progress-text {
+    position: absolute;
+    font-size: var(--completion-progress-font-size, 10px);
+    font-weight: var(--completion-progress-font-weight, 700);
+    color: var(--completion-progress-text, var(--header-title-color));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon-small {
+    font-size: var(--header-icon-size, 16px);
+}
+
+.user-name {
+    color: var(--username-color);
+    font-size: var(--username-font-size);
+    font-weight: var(--username-font-weight);
+    letter-spacing: 0;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border-radius: var(--task-container-border-radius);
+}
+
+.task-scroll-container {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent !important;
+}
+
+.tasks-wrapper,
+.duplicate-content {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-bottom: 9px;
+}
+
+.user-tasks {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--task-container-border-radius);
+    gap: 7px;
+    padding: 16px;
+    background-color: var(--user-tasks-background-color);
+}
+
+.user-tasks:first-child {
+    margin-top: 0;
+}
+
+.user-tasks:last-child {
+    margin-bottom: 0;
+}
+
+.task {
+    display: flex;
+}
+
+.user-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: transparent !important;
+}
+
+.task-id {
+    margin-right: 9px;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.taskCompleted {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight);
+    letter-spacing: 0;
+    color: var(--completed-task-text-color);
+    text-decoration: line-through;
+    font-style: var(--completed-task-font-style);
+}
+
+.task-indicator {
+    display: inline-block;
+    position: relative;
+    font-size: var(--task-font-size);
+    width: 1.0em;
+    height: 1.0em;
+    border-radius: 50%;
+    border: 1px solid var(--main-text-color);
+    margin: 0.1em 0.5em 0 0;
+    flex-shrink: 0;
+}
+
+.task-indicator.completed {
+    background-color: var(--task-complete-main);
+    width: 1.0em;
+    height: 1.0em;
+    opacity: 1;
+    border: 1px solid var(--task-complete-main);
+}
+
+.task-indicator.completed::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "\2713";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.6em;
+    color: var(--check-symbol-color);
+}
+
+.task-description {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight) !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    flex-grow: 1;
+    color: var(--main-text-color) !important;
+}
+
+.task-description.taskCompleted {
+    color: var(--completed-task-text-color) !important;
+}
+
+.task-number {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight);
+    margin-right: 4px;
+    color: var(--main-text-color);
+}
+
+.task-number.completed {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight);
+    color: var(--completed-task-text-color);
+}
+
+.footer {
+    display: none;
+}
+
+.main-container,
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    height: 100vh;
+    gap: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* Multi-View Specifics */
+.header {
+    padding: 16px;
+    flex-shrink: 0;
+    border-radius: var(--header-border-radius);
+    background-color: var(--header-background-color);
+}
+
+.header-top-portion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-title {
+    font-size: var(--header-title-size);
+    font-weight: var(--header-title-font-weight);
+    color: var(--header-title-color);
+}
+
+.completion-progress {
+    background-color: var(--completion-progress-background-color);
+    color: var(--completion-progress-text-color);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: var(--completion-progress-font-size);
+    font-weight: var(--completion-progress-font-weight);
+}
+
+.header-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: var(--header-desc-size);
+    color: var(--header-title-color);
+}
+
+.details {
+    gap: 20px;
+}
+
+.details-category {
+    font-size: var(--header-details-font-size);
+    font-weight: var(--header-details-font-weight);
+    color: var(--header-details-text-color);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.material-symbols-rounded {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-size: var(--header-icon-size);
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+.user-name {
+    color: var(--username-color);
+    font-size: var(--username-font-size);
+    font-weight: var(--username-font-weight);
+    letter-spacing: 0;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border-radius: var(--task-container-border-radius);
+    background-color: transparent !important;
+}
+
+.user-tasks {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--task-container-border-radius);
+    gap: 7px;
+    padding: 16px;
+    background-color: var(--user-tasks-background-color);
+}
+
+.user-tasks:first-child {
+    margin-top: 14px;
+}
+
+.user-tasks:last-child {
+    margin-bottom: 0;
+}
+
+.task {
+    display: flex;
+}
+
+.user-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.task-id {
+    margin-right: 9px;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.taskCompleted {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight);
+    letter-spacing: 0;
+    color: var(--completed-task-text-color);
+    text-decoration: line-through;
+    font-style: var(--completed-task-font-style);
+}
+
+.task-description {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight) !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    flex-grow: 1;
+    color: var(--task-text-color);
+}
+
+.task-focused {
+    background-color: var(--focus-mode-background-color, #ffffff);
+    color: var(--focus-mode-text-color, #000000) !important;
+    border-radius: 8px;
+    padding: 4px 6px;
+    width: fit-content;
+    margin: 4px 0 4px -6px;
+    transition: all 0.3s ease;
+}
+
+/* Ensure text color overrides inside focused task */
+.task-focused .task-number,
+.task-focused .task-description {
+    color: var(--focus-mode-text-color, #000000) !important;
+}
+
+/* Override Checkbox Color in Focus Mode */
+.task-focused .task-indicator {
+    border-color: var(--focus-mode-checkbox-color, var(--main-text-color)) !important;
+}
+
+.task-focused .task-indicator.completed {
+    background-color: var(--focus-mode-checkbox-color, var(--task-complete-main)) !important;
+    border-color: var(--focus-mode-checkbox-color, var(--task-complete-main)) !important;
+}
+
+.task-description.taskCompleted {
+    color: var(--completed-task-text-color);
+}
+
+.task-number {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight);
+    margin-right: 4px;
+    color: var(--task-text-color);
+}
+
+.task-number.completed {
+    font-size: var(--task-font-size);
+    font-weight: var(--task-font-weight);
+    color: var(--completed-task-text-color);
+}
+
+
+.footer {
+    display: none;
+}
+
+/* Single View Specifics */
+.layout-single {
+    border-radius: var(--tasklist-border-radius);
+    background-color: var(--header-background-color);
+    gap: 0;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+.layout-single .header {
+    border-radius: 0;
+    background-color: transparent;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.layout-single .task-list {
+    border-radius: 0;
+}
+
+
+.layout-single .user-task-list {
+    gap: 4px;
+}
+
+.layout-single .user-tasks {
+    padding: 8px 16px;
+}
+
+.layout-single .footer {
+    display: block;
+    height: 16px;
+    border-top: 1px solid var(--divider-color);
+    background-color: transparent;
+    padding: 0 16px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scroll-up {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+.animate-scroll {
+    animation: scroll-up linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Single View Overrides */
+.main-container.layout-single .user-tasks {
+    background-color: transparent !important;
+}
+
+.layout-single .user-tasks:first-child {
+    margin-top: 0;
+}

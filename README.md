@@ -69,6 +69,15 @@ const oauth = 'oauth:yourOAuthTokenHere';  // Insert your bot’s OAuth token he
 Once these steps are completed, your bot is ready to connect.
 For customization options like **Appearance** and **Theming**, refer to the next sections.
 
+### Easy Configuration (No Code Editing)
+
+If you prefer not to edit code files directly, you can use the built-in Settings Page:
+
+1. Open `html/settings.html` in your browser (Chrome or Edge recommended).
+2. Your current settings will load automatically.
+3. Change your settings in the easy-to-use form.
+4. Click **"Save Changes"**. You will be asked to select your `js/configs.js` file to confirm the save.
+
 ### Enable Testing
 
 To enable testing, set the `testingMode` value to `true` to use dummy data. This is useful for testing the bot's

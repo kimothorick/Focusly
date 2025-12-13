@@ -5,12 +5,12 @@
     --header-description-font-size: 12px;
     --header-description-font-weight: 500;
     --header-description-text-color: #9b2e2e;
-    --main-text-color: 'black';
+    --main-text-color: black;
     --completed-task-text-color: #3F3F3F;
     --font-family: 'Inter';
-    --username-font-size: 1400px;
+    --username-font-size: 14px;
     --username-font-weight: 400;
-    --username-color: 'black';
+    --username-color: black;
     --check-box-size: 12px;
     --check-box-color: #3F3F3F;
     --check-symbol-color: #ffffff;
@@ -33,11 +33,11 @@
     --header-description-display: none;
     --header-details-text-color: #3F3F3F;
     --header-icon-color: #3F3F3F;
-    --header-border-radius: '20px';
-    --task-container-border-radius: '20px';
-    --task-text-color: #ffffff;
+    --header-border-radius: 20px;
+    --task-container-border-radius: 20px;
+    --task-text-color: black;
     --completed-task-font-style: normal;
-    --divider-color: #3F3F3F;
+    --divider-color: #E0E0E0;
     --completion-progress-background-color: #ffffff;
     --tasklist-border-radius: 20px;
 }
